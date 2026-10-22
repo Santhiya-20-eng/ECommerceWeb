@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Products: everyone can read. Only the admin account can add/edit (used to load the sample products).
+    match /products/{id} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == 'YOUR_ADMIN_EMAIL@example.com';
+    }
+
+    // User profiles: each user can read/write only their own.
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Orders: a user can create orders for themselves and read only their own.
+    match /orders/{id} {
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+  }
+}

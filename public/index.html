@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shoply | Tech, home and everyday picks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="promo">Free delivery on orders over $50. Easy 7-day returns.</div>
+  <header class="nav">
+    <a class="logo" href="#/">shoply<span>.</span></a>
+    <form class="hsearch" id="hform" role="search">
+      <input id="hq" placeholder="Search for headphones, shoes, lamps…" aria-label="Search products">
+      <button aria-label="Search">Search</button>
+    </form>
+    <div class="acts">
+      <span id="acct"></span>
+      <a href="#/cart" class="cartlink" aria-label="Cart">🛒 <b id="cart-count">0</b></a>
+    </div>
+  </header>
+  <nav class="cats" id="cats" aria-label="Categories"></nav>
+  <main id="app"></main>
+  <div id="toast" role="status"></div>
+  <footer class="foot">
+    <div class="fgrid">
+      <div><a class="logo" href="#/">shoply<span>.</span></a><p>Quality everyday products at honest prices, delivered to your door.</p></div>
+      <div><h4>Shop</h4><a href="#/shop">All products</a><a href="#/shop?cat=Audio">Audio</a><a href="#/shop?cat=Computing">Computing</a><a href="#/shop?cat=Home">Home</a></div>
+      <div><h4>Account</h4><a href="#/login">Log in</a><a href="#/register">Create account</a><a href="#/orders">My orders</a></div>
+      <div><h4>Help</h4><a href="#/cart">Cart</a><span>Free delivery over $50</span><span>7-day easy returns</span></div>
+    </div>
+    <div class="copy">© 2026 Shoply. A demo store built with Firebase.</div>
+  </footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
